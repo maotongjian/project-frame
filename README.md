@@ -94,6 +94,25 @@ npm run preview
 
 - Vue3, Vite, Vue Router, Prettier, ESLint, SCSS...
 
+## nginx配置
+
+```bash
+location /
+{
+  try_files $uri $uri /index.html;
+}
+
+location /prod-api/
+{
+  proxy_pass https://your.domain.com;
+  proxy_set_header Host $proxy_host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header REMOTE-HOST $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+
+```
+
 ## 📄 License
 
 MIT License
@@ -117,22 +136,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-## nginx配置
-
-```bash
-location /
-{
-  try_files $uri $uri /index.html;
-}
-
-location /prod-api/
-{
-  proxy_pass https://your.domain.com;
-  proxy_set_header Host $proxy_host;
-  proxy_set_header X-Real-IP $remote_addr;
-  proxy_set_header REMOTE-HOST $remote_addr;
-  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-}
-
-```
