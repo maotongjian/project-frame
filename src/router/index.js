@@ -5,6 +5,11 @@ import routes from '@/routes';
 
 const childRoutes = [
   {
+    path: '',
+    name: 'index',
+    component: () => import('@/pages/Index.vue'),
+  },
+  {
     path: 'error',
     name: 'localeError',
     component: () => import('@/pages/Error.vue'),

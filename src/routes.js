@@ -1,4 +1,8 @@
 export default {
+  index: {
+    name: 'index',
+    path: '/',
+  },
   noFound: {
     name: 'noFound',
     path: '/404',
