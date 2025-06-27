@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { SUPPORT_LOCALES, DEFAULT_LOCALE, changeLocale } from '@/i18n';
-import App from '@/App.vue';
 import routes from '@/routes';
 
 const childRoutes = [
@@ -30,7 +29,6 @@ const router = createRouter({
     },
     {
       path: '/:locale([a-zA-Z\\-]+)',
-      component: App,
       children: childRoutes,
     },
     {
