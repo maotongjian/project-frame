@@ -1,4 +1,77 @@
-# 快速启动项目基础框架
+# 框架目录
+
+```text
+src
+├── App.vue
+├── apis
+│   └── request.js
+├── assets
+│   ├── font
+│   │   ├── Poppins-Bold.eot
+│   │   ├── Poppins-Bold.ttf
+│   │   ├── Poppins-Bold.woff
+│   │   ├── Poppins-Bold.woff2
+│   │   ├── Poppins-BoldItalic.eot
+│   │   ├── Poppins-BoldItalic.ttf
+│   │   ├── Poppins-BoldItalic.woff
+│   │   ├── Poppins-BoldItalic.woff2
+│   │   ├── Poppins-Medium.eot
+│   │   ├── Poppins-Medium.ttf
+│   │   ├── Poppins-Medium.woff
+│   │   ├── Poppins-Medium.woff2
+│   │   ├── Poppins-Regular.eot
+│   │   ├── Poppins-Regular.ttf
+│   │   ├── Poppins-Regular.woff
+│   │   └── Poppins-Regular.woff2
+│   ├── image
+│   │   ├── counterBg-pc.png
+│   │   ├── counterBg.png
+│   │   ├── headerIcon.png
+│   │   ├── paymentFail.png
+│   │   ├── paymentSuccess.png
+│   │   └── paymentWaiting.png
+│   └── scss
+│       ├── font.scss
+│       ├── iconfont.scss
+│       ├── main.scss
+│       ├── mixins.scss
+│       └── variables.scss
+├── components
+│   ├── LanguageDropdown.vue
+│   ├── common
+│   │   ├── Input.vue
+│   │   ├── Popup.vue
+│   │   └── Select.vue
+│   └── global
+│       └── Loading.vue
+├── composables
+│   ├── useLoading.js
+│   └── useLocaleRouter.js
+├── directives
+│   └── clickOutside.js
+├── i18n
+│   ├── index.js
+│   └── locales
+│       ├── en.json
+│       ├── es.json
+│       └── fr.json
+├── main.js
+├── pages
+│   ├── Error.vue
+│   ├── Index.vue
+│   └── NotFound.vue
+├── plugins
+│   ├── loading.js
+│   └── responsive.js
+├── router
+│   └── index.js
+├── routes.js
+├── stores
+│   └── ui.js
+└── utils
+    └── utils.js
+
+```
 
 ## 🚀 启动项目
 
