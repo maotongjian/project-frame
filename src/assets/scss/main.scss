@@ -1,0 +1,144 @@
+:root {
+  font-family: Poppins-Regular, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+}
+
+html {
+  font-size: 10vw;
+  min-height: 100vh;
+}
+@media screen and (min-width: $min-width) {
+  html {
+    /* prettier-ignore */
+    font-size: 37.5PX;
+  }
+  body {
+    /* prettier-ignore */
+    font-size: 16PX;
+  }
+}
+@media screen and (max-width: $max-width) {
+  body {
+    font-size: 12px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  outline: none;
+}
+
+@media screen and (min-width: $min-width) {
+  button {
+    /* prettier-ignore */
+    border-radius: 8PX;
+    /* prettier-ignore */
+    border-width: 1PX;
+    /* prettier-ignore */
+    padding: 8PX 16PX;
+    /* prettier-ignore */
+    font-size: 16PX;
+  }
+}
+
+p {
+  word-break: break-word;
+}
+
+i {
+  font-style: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #49a0ff;
+}
+
+img,
+i,
+span {
+  vertical-align: middle;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-row-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-column-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.font-regular {
+  font-family: Poppins-Regular, sans-serif;
+}
+
+.font-medium {
+  font-family: Poppins-medium, sans-serif;
+}
+
+.font-bold {
+  font-family: Poppins-Bold, sans-serif;
+}
+
+.font-bold-italic {
+  font-family: Poppins-BoldItalic, sans-serif;
+}

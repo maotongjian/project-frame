@@ -1,0 +1,24 @@
+// 定义圆角
+@mixin radius($radius: 50%) {
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  -moz-border-radius: 50%$radius;
+  border-radius: $radius;
+}
+
+// 定义单行文字多行溢出
+@mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 定义多行文字省略
+@mixin hideText($lineNum: 2) {
+  -webkit-line-clamp: $lineNum;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}

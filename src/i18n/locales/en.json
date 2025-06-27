@@ -1,0 +1,12 @@
+{
+  "common": {
+    "backToHome": "Back to Home",
+    "loading": "Loading...",
+    "required": "This field is required!",
+    "requiredTips": "Please enter!",
+    "requiredErrorText": "Please enter!",
+    "defaultErrorText": "Input error!",
+    "pleaseSelect": "Please select!",
+    "confirm": "confirm"
+  }
+}
