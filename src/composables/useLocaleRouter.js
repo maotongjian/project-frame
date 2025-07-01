@@ -10,65 +10,73 @@ export function useLocaleRouter() {
     return SUPPORT_LOCALES.includes(locale) ? locale : DEFAULT_LOCALE;
   }
 
-  function withLocale(path) {
+  function withLocalePath(path) {
     const locale = currentLocale();
-    if (path.startsWith(`/${locale}`)) return path;
-    return `/${locale}${path.startsWith('/') ? path : '/' + path}`;
+    const cleanPath = path.replace(/^\/+/, '').replace(/\/+$/, '');
+    if (locale === DEFAULT_LOCALE) {
+      return `/${cleanPath}`;
+    }
+    if (cleanPath === '' || cleanPath === locale) {
+      return `/${locale}`;
+    }
+    if (cleanPath.startsWith(`${locale}/`)) {
+      return `/${cleanPath}`;
+    }
+    return `/${locale}/${cleanPath}`;
   }
 
-  function pushLocale(to) {
-    const locale = currentLocale();
+  function targetLocalePath(path, targetLocale) {
+    let cleanPath = path.replace(/^\/+/, '').replace(/\/+$/, '');
+    const parts = cleanPath.split('/');
+    if (SUPPORT_LOCALES.includes(parts[0])) {
+      parts.shift();
+    }
+    const restPath = parts.join('/');
+    if (targetLocale === DEFAULT_LOCALE) {
+      return restPath ? `/${restPath}` : '/';
+    }
+    return restPath ? `/${targetLocale}/${restPath}` : `/${targetLocale}`;
+  }
 
+  function routerPush(to) {
     if (typeof to === 'string') {
-      return router.push(withLocale(to));
-    } else if (typeof to === 'object' && to.name) {
+      return router.push(withLocalePath(to));
+    } else if (typeof to === 'object') {
       return router.push({
         ...to,
-        params: {
-          ...(to.params || {}),
-          locale,
-        },
+        path: withLocalePath(to.path),
       });
     }
   }
 
-  function replaceLocale(to) {
-    const locale = currentLocale();
-
+  function routerReplace(to) {
     if (typeof to === 'string') {
-      return router.replace(withLocale(to));
-    } else if (typeof to === 'object' && to.name) {
+      return router.replace(withLocalePath(to));
+    } else if (typeof to === 'object') {
       return router.replace({
         ...to,
-        params: {
-          ...(to.params || {}),
-          locale,
-        },
+        path: withLocalePath(to.path),
       });
     }
   }
 
   function localePath(to) {
-    const locale = currentLocale();
-
     if (typeof to === 'string') {
-      return withLocale(to);
-    } else if (typeof to === 'object' && to.name) {
+      return withLocalePath(to);
+    } else if (typeof to === 'object') {
       return {
         ...to,
-        params: {
-          ...(to.params || {}),
-          locale,
-        },
+        path: withLocalePath(to.path),
       };
     }
     return to;
   }
 
   return {
-    pushLocale,
-    replaceLocale,
+    routerPush,
+    routerReplace,
     localePath,
     currentLocale,
+    targetLocalePath,
   };
 }

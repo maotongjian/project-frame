@@ -5,17 +5,14 @@ import routes from '@/routes';
 const childRoutes = [
   {
     path: '',
-    name: 'index',
     component: () => import('@/pages/Index.vue'),
   },
   {
     path: 'error',
-    name: 'localeError',
     component: () => import('@/pages/Error.vue'),
   },
   {
     path: ':pathMatch(.*)*',
-    name: 'localeNotFound',
     component: () => import('@/pages/NotFound.vue'),
   },
 ];
@@ -25,21 +22,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: `/${DEFAULT_LOCALE}`,
+      children: childRoutes,
     },
     {
       path: '/:locale([a-zA-Z\\-]+)',
       children: childRoutes,
-    },
-    {
-      path: '/error',
-      name: 'globalError',
-      component: () => import('@/pages/Error.vue'),
-    },
-    {
-      path: '/:pathMatch(.*)*',
-      name: 'globalNotFound',
-      component: () => import('@/pages/NotFound.vue'),
     },
   ],
 });
@@ -47,7 +34,7 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   const locale = to.params.locale || DEFAULT_LOCALE;
   if (locale && !SUPPORT_LOCALES.includes(locale)) {
-    return next(`/${DEFAULT_LOCALE}`);
+    return next(routes.notFound.path);
   }
   if (locale) {
     await changeLocale(locale);

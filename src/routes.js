@@ -3,8 +3,8 @@ export default {
     name: 'index',
     path: '/',
   },
-  noFound: {
-    name: 'noFound',
+  notFound: {
+    name: 'notFound',
     path: '/404',
   },
   error: {

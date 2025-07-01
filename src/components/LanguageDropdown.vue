@@ -13,15 +13,20 @@
 
 <script setup>
 import { ref, nextTick } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
+
+import { useLocaleRouter } from '@/composables/useLocaleRouter';
 
 import { SUPPORT_LOCALES, DEFAULT_LOCALE, changeLocale } from '@/i18n';
 
-const router = useRouter();
 const route = useRoute();
+const router = useRouter();
+const { targetLocalePath } = useLocaleRouter();
+
+const locale = route.params.locale || DEFAULT_LOCALE;
 
 const dropdownRef = ref(null);
-const langs = ref([DEFAULT_LOCALE.toUpperCase()]);
+const langs = ref([locale.toUpperCase()]);
 const isExpanded = ref(false);
 
 const toggle = async (lang, isOutside) => {
@@ -42,15 +47,8 @@ const toggle = async (lang, isOutside) => {
       changeLocale(locale);
       langs.value = [lang];
       el.style.height = 'auto';
-
-      router.replace({
-        name: route.name,
-        params: {
-          ...route.params,
-          locale,
-        },
-        query: route.query,
-      });
+      const newPath = targetLocalePath(route.fullPath, locale);
+      router.replace({ path: newPath, query: route.query });
     }, 100);
   }
 };

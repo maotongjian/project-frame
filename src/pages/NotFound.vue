@@ -4,7 +4,7 @@
       <img src="/404.png" alt="404" width="800" height="800" />
       <div class="button-container">
         <button @click="handleBackHome">{{ $t('common.backToHome') }}</button>
-        <!-- <router-link :to="localePath({ name: routes.index.name })">{{ $t('common.backToHome') }}</router-link> -->
+        <!-- <router-link :to="localePath({ path: routes.index.path })">{{ $t('common.backToHome') }}</router-link> -->
       </div>
     </div>
   </div>
@@ -14,10 +14,10 @@
 import { useLocaleRouter } from '@/composables/useLocaleRouter';
 import routes from '@/routes';
 
-const { pushLocale } = useLocaleRouter();
+const { routerPush } = useLocaleRouter();
 
 const handleBackHome = () => {
-  pushLocale({ name: routes.index.name });
+  routerPush({ path: routes.index.path });
 };
 </script>
 
