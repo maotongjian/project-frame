@@ -25,6 +25,12 @@ html {
 }
 @media screen and (max-width: $max-width) {
   body {
+    font-size: 8px;
+  }
+}
+// 增加断点，防止字体太大
+@media screen and (max-width: 768px) {
+  body {
     font-size: 12px;
   }
 }
