@@ -59,10 +59,8 @@ defineExpose({
 }
 @media screen and (min-width: $min-width) {
   .loading-text {
-    /* prettier-ignore */
-    font-size: 20PX;
-    /* prettier-ignore */
-    margin-top: 20PX;
+    font-size: 20px;
+    margin-top: 20px;
   }
 }
 </style>

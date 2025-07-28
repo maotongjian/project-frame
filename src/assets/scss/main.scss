@@ -51,14 +51,16 @@ button {
 
 @media screen and (min-width: $min-width) {
   button {
-    /* prettier-ignore */
-    border-radius: 8PX;
-    /* prettier-ignore */
-    border-width: 1PX;
-    /* prettier-ignore */
-    padding: 8PX 16PX;
-    /* prettier-ignore */
-    font-size: 16PX;
+    border-radius: 8px;
+    border-width: 1px;
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  .main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 }
 

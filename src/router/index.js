@@ -10,10 +10,12 @@ const childRoutes = [
   {
     path: 'error',
     component: () => import('@/pages/Error.vue'),
+    meta: { hideLayout: true },
   },
   {
     path: ':pathMatch(.*)*',
     component: () => import('@/pages/NotFound.vue'),
+    meta: { hideLayout: true },
   },
 ];
 
@@ -22,10 +24,12 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      component: () => import('@/components/layout/Layout.vue'),
       children: childRoutes,
     },
     {
       path: '/:locale([a-zA-Z\\-]+)',
+      component: () => import('@/components/layout/Layout.vue'),
       children: childRoutes,
     },
   ],

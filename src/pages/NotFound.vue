@@ -60,26 +60,21 @@ const handleBackHome = () => {
     background-color: #f0f0f0;
     .error-content {
       & > img {
-        /* prettier-ignore */
-        max-width: 600PX;
+        max-width: 600px;
         height: auto;
       }
       .button-container {
         display: flex;
         justify-content: center;
-        /* prettier-ignore */
-        gap: 16PX;
+        gap: 16px;
         button {
-          /* prettier-ignore */
-          padding: 12PX 32PX;
+          padding: 12px 32px;
           background-color: $main-color;
           color: #fff;
           border: none;
-          /* prettier-ignore */
-          border-radius: 8PX;
+          border-radius: 8px;
           cursor: pointer;
-          /* prettier-ignore */
-          font-size: 22PX;
+          font-size: 22px;
         }
       }
     }

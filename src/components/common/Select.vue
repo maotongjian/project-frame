@@ -215,19 +215,14 @@ watch(
   .select {
     position: relative;
     width: 100%;
-    /* prettier-ignore */
-    font-size: 16PX;
-    /* prettier-ignore */
-    line-height: 20PX;
+    font-size: 16px;
+    line-height: 20px;
     user-select: none;
     outline: none;
     .control {
-      /* prettier-ignore */
-      border: 1PX solid #e5e9ee;
-      /* prettier-ignore */
-      border-radius: 4PX;
-      /* prettier-ignore */
-      padding: 12PX 16PX 12PX 14PX;
+      border: 1px solid #e5e9ee;
+      border-radius: 4px;
+      padding: 12px 16px 12px 14px;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -244,8 +239,7 @@ watch(
     }
     .control:focus {
       border-color: $main-color;
-      /* prettier-ignore */
-      box-shadow: 0 0 0 2PX rgba(64, 158, 255, 0.2);
+      box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.2);
     }
     .selected {
       color: #333;
@@ -254,8 +248,7 @@ watch(
       }
     }
     .arrow {
-      /* prettier-ignore */
-      font-size: 16PX;
+      font-size: 16px;
       color: #999;
       transition: all 0.3s ease;
     }
@@ -270,28 +263,21 @@ watch(
       left: 0;
       width: 100%;
       background: #fff;
-      /* prettier-ignore */
-      border: 1PX solid #ccc;
+      border: 1px solid #ccc;
       border-top: none;
-      /* prettier-ignore */
-      border-radius: 0 0 6PX 6PX;
-      /* prettier-ignore */
-      box-shadow: 0 4PX 12PX rgba(0, 0, 0, 0.1);
+      border-radius: 0 0 6px 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       z-index: 10;
-      /* prettier-ignore */
-      max-height: 200PX;
+      max-height: 200px;
       overflow-y: auto;
       color: #333;
     }
     .option {
-      /* prettier-ignore */
-      padding: 12PX 16PX;
+      padding: 12px 16px;
       cursor: pointer;
       transition: background 0.2s;
-      /* prettier-ignore */
-      font-size: 14PX;
-      /* prettier-ignore */
-      line-height: 20PX;
+      font-size: 14px;
+      line-height: 20px;
     }
     .option:hover {
       background: #f5f5f5;
@@ -309,8 +295,7 @@ watch(
     .fade-slide-enter-from,
     .fade-slide-leave-to {
       opacity: 0;
-      /* prettier-ignore */
-      transform: translateY(-8PX);
+      transform: translateY(-8px);
     }
   }
 }

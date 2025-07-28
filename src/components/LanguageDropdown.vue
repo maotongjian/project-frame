@@ -108,23 +108,16 @@ const toggle = async (lang, isOutside) => {
       position: absolute;
       top: 0;
       right: 0;
-      /* prettier-ignore */
-      border-radius: 14PX;
-      /* prettier-ignore */
-      border: 1PX solid #e5e9ee;
-      /* prettier-ignore */
-      padding: 2PX;
+      border-radius: 14px;
+      border: 1px solid #e5e9ee;
+      padding: 2px;
       background-color: #fff;
       .dropdown-list {
-        /* prettier-ignore */
-        font-size: 18PX;
-        /* prettier-ignore */
-        line-height: 20PX;
+        font-size: 18px;
+        line-height: 20px;
         & > li {
-          /* prettier-ignore */
-          padding: 6PX 12PX;
-          /* prettier-ignore */
-          border-bottom: solid 1PX #d8d8d8;
+          padding: 6px 12px;
+          border-bottom: solid 1px #d8d8d8;
           color: #696d6d;
           cursor: pointer;
         }
@@ -132,20 +125,16 @@ const toggle = async (lang, isOutside) => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          /* prettier-ignore */
-          gap: 4PX;
+          gap: 4px;
           color: #3f4242;
           .arrow {
-            /* prettier-ignore */
-            border: solid 6PX transparent;
+            border: solid 6px transparent;
             border-top-color: #3f4242;
             transition: all 0.3s ease;
-            /* prettier-ignore */
-            margin-top: 6PX;
+            margin-top: 6px;
             &.rotated {
               transform: rotate(180deg);
-              /* prettier-ignore */
-              margin-top: -6PX;
+              margin-top: -6px;
               border-top-color: $main-color;
             }
           }
